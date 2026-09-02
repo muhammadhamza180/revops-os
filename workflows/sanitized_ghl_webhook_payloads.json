@@ -1,0 +1,37 @@
+{
+  "lead_qualification_event": {
+    "event_type": "LEAD_QUALIFIED_TIER_1",
+    "source_subaccount_id": "GHL_SUBACCOUNT_01_PROSPECTING",
+    "target_subaccount_id": "GHL_SUBACCOUNT_02_ACQUISITIONS",
+    "timestamp": "2026-09-02T12:00:00Z",
+    "contact": {
+      "first_name": "Marcus",
+      "last_name": "Vance",
+      "email": "marcus.vance@example.com",
+      "phone": "+1XXXXXXXXXX",
+      "property_address": "1428 Elmhurst Lane, Austin, TX 78701",
+      "computed_score": 88,
+      "qualification_tags": ["MOTIVATION_HIGH", "TIMELINE_IMMEDIATE", "AS_IS_SALE"]
+    },
+    "sla_assignment": {
+      "assigned_rep": "Acquisitions Specialist Alpha",
+      "contact_deadline_utc": "2026-09-02T16:00:00Z",
+      "sla_window_hours": 4
+    }
+  },
+  "disposition_contract_signed_event": {
+    "event_type": "PURCHASE_CONTRACT_EXECUTED",
+    "source_subaccount_id": "GHL_SUBACCOUNT_02_ACQUISITIONS",
+    "target_subaccount_id": "GHL_SUBACCOUNT_03_DISPOSITIONS",
+    "timestamp": "2026-09-02T15:30:00Z",
+    "deal_data": {
+      "contract_id": "CTR-2026-8841",
+      "property_address": "1428 Elmhurst Lane, Austin, TX 78701",
+      "purchase_price": 245000,
+      "estimated_arv": 380000,
+      "estimated_repairs": 45000,
+      "target_assignment_fee": 35000,
+      "buyer_blast_radius_miles": 15
+    }
+  }
+}
