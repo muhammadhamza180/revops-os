@@ -1,0 +1,262 @@
+{
+  "category": "Short-Term Nurture (Days 8–45)",
+  "description": "Steady value-oriented cadence addressing seller timing, estate issues, and market changes.",
+  "total_steps": 28,
+  "campaigns": [
+    {
+      "id": "sn_001",
+      "step": 1,
+      "day": 8,
+      "channel": "EMAIL",
+      "name": "Market Inventory Update",
+      "subject": "Real estate market update for {{property.city}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_002",
+      "step": 2,
+      "day": 9,
+      "channel": "SMS",
+      "name": "Soft Touch Checking In",
+      "copy": "Hi {{contact.first_name}}, hope your week is off to a great start. Any updates on {{property.address}}?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_003",
+      "step": 3,
+      "day": 11,
+      "channel": "EMAIL",
+      "name": "How to Avoid Closing Cost Surprises",
+      "subject": "Avoiding unexpected closing costs on {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_004",
+      "step": 4,
+      "day": 13,
+      "channel": "SMS",
+      "name": "14-Day Motivation Check",
+      "copy": "Hey {{contact.first_name}}, are you still planning on selling {{property.address}} this season?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_005",
+      "step": 5,
+      "day": 15,
+      "channel": "TASK",
+      "name": "Bi-Weekly Outreach Call",
+      "instructions": "Rep check-in dial. Note any life change events in CRM.",
+      "stop_on_reply": false
+    },
+    {
+      "id": "sn_006",
+      "step": 6,
+      "day": 16,
+      "channel": "EMAIL",
+      "name": "Selling Inherited / Probate Property Guide",
+      "subject": "Navigating probate or inherited property in {{property.state}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_007",
+      "step": 7,
+      "day": 18,
+      "channel": "SMS",
+      "name": "Flexible Occupancy Option",
+      "copy": "{{contact.first_name}}, did you know we can close on {{property.address}} and let you stay for up to 60 days rent-free while you find your next place?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_008",
+      "step": 8,
+      "day": 20,
+      "channel": "EMAIL",
+      "name": "As-Is vs Fix & Flip Math",
+      "subject": "The real cost of repairing before selling",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_009",
+      "step": 9,
+      "day": 22,
+      "channel": "SMS",
+      "name": "Direct Question Touch",
+      "copy": "Hi {{contact.first_name}}, is price the main factor for you, or is timeline more important right now?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_010",
+      "step": 10,
+      "day": 24,
+      "channel": "EMAIL",
+      "name": "Recent Comparable Case Study",
+      "subject": "Recent property sale near {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_011",
+      "step": 11,
+      "day": 26,
+      "channel": "SMS",
+      "name": "Quick Valuation Re-Check",
+      "copy": "{{contact.first_name}}, our underwriting team is doing another round of local buys this month. Want us to re-run the numbers on {{property.address}}?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_012",
+      "step": 12,
+      "day": 28,
+      "channel": "EMAIL",
+      "name": "Capital Gains Tax Reduction Overview",
+      "subject": "Tax-advantaged ways to sell your property",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_013",
+      "step": 13,
+      "day": 30,
+      "channel": "SMS",
+      "name": "Day 30 Milestone Ping",
+      "copy": "Hey {{contact.first_name}}, checking in on your plans for {{property.address}}. Still open to a clean cash offer?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_014",
+      "step": 14,
+      "day": 31,
+      "channel": "TASK",
+      "name": "Month 1 Review Call",
+      "instructions": "Rep scheduled outbound check-in.",
+      "stop_on_reply": false
+    },
+    {
+      "id": "sn_015",
+      "step": 15,
+      "day": 33,
+      "channel": "EMAIL",
+      "name": "Downsizing Stress-Free Guide",
+      "subject": "Guide: Simplifying your home sale and downsizing",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_016",
+      "step": 16,
+      "day": 35,
+      "channel": "SMS",
+      "name": "Buyer Demand in Zip Code",
+      "copy": "Hi {{contact.first_name}}, we have 2 specific buyers looking in your immediate area this week. Let me know if you want to connect!",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_017",
+      "step": 17,
+      "day": 37,
+      "channel": "EMAIL",
+      "name": "Preventing Foreclosure or Tax Delinquency",
+      "subject": "Stopping tax liens or mortgage stress before it compounds",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_018",
+      "step": 18,
+      "day": 39,
+      "channel": "SMS",
+      "name": "Short Check-in",
+      "copy": "Still thinking about selling {{property.address}} this year, {{contact.first_name}}?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_019",
+      "step": 19,
+      "day": 40,
+      "channel": "EMAIL",
+      "name": "Zero Cleanout Policy Reminder",
+      "subject": "Take what you want, leave the rest at {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_020",
+      "step": 20,
+      "day": 41,
+      "channel": "SMS",
+      "name": "Timeline Check",
+      "copy": "{{contact.first_name}}, what would be your ideal closing date if the price made sense?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_021",
+      "step": 21,
+      "day": 42,
+      "channel": "EMAIL",
+      "name": "How Title Escrow Protects Sellers",
+      "subject": "How escrow ensures your funds are protected",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_022",
+      "step": 22,
+      "day": 43,
+      "channel": "SMS",
+      "name": "Friendly Nudge",
+      "copy": "Hope everything is going well on your end, {{contact.first_name}}! Reach out anytime.",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_023",
+      "step": 23,
+      "day": 44,
+      "channel": "EMAIL",
+      "name": "6-Week Property Market Review",
+      "subject": "Property valuation recap for {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_024",
+      "step": 24,
+      "day": 45,
+      "channel": "SMS",
+      "name": "Transition to Long-Term Nurture",
+      "copy": "Hey {{contact.first_name}}, I'll continue checking in periodically. Whenever you're ready to look at numbers for {{property.address}}, my line is open.",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_025",
+      "step": 25,
+      "day": 45,
+      "channel": "AUTOMATION",
+      "name": "Apply 30-Day Decay & Transition",
+      "actions": [
+        "apply_decay:-4",
+        "apply_tag:campaign_45_105d_active"
+      ],
+      "stop_on_reply": false
+    },
+    {
+      "id": "sn_026",
+      "step": 26,
+      "day": 45,
+      "channel": "EMAIL",
+      "name": "Monthly Property Value Digest",
+      "subject": "Your monthly equity summary for {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_027",
+      "step": 27,
+      "day": 45,
+      "channel": "SMS",
+      "name": "Final Short Nurture Note",
+      "copy": "Thanks again for connecting with us, {{contact.first_name}}. Best of luck with everything!",
+      "stop_on_reply": true
+    },
+    {
+      "id": "sn_028",
+      "step": 28,
+      "day": 45,
+      "channel": "TASK",
+      "name": "Review Lead Health",
+      "instructions": "Audit CRM notes before enrolling in 45-105d campaign.",
+      "stop_on_reply": false
+    }
+  ]
+}

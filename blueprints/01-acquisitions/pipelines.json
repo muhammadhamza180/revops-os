@@ -1,0 +1,216 @@
+{
+  "version": "2.4.0",
+  "sub_account": "01-acquisitions",
+  "pipelines": [
+    {
+      "id": "pipe_acq_inbound_v1",
+      "name": "Inbound Lead Qualification & Acquisition",
+      "description": "Primary high-velocity pipeline for inbound web, PPC, referral, and direct mail leads.",
+      "sla_policy": {
+        "first_touch_hours": 24,
+        "escalation_touch_hours": 48,
+        "round_robin_group": "acq_tier1_closers"
+      },
+      "stages": [
+        {
+          "id": "stage_acq_new",
+          "name": "New Inbound Lead",
+          "order": 1,
+          "probability": 5,
+          "sla_target_hours": 24,
+          "score_range": [
+            0,
+            4
+          ],
+          "automations": [
+            "trigger_tag_lead_new",
+            "start_sla_24h_timer",
+            "enroll_high_frequency_0_7d_campaign"
+          ]
+        },
+        {
+          "id": "stage_acq_attempted",
+          "name": "Contact Attempted (SLA Active)",
+          "order": 2,
+          "probability": 10,
+          "sla_target_hours": 24,
+          "score_range": [
+            1,
+            9
+          ],
+          "automations": [
+            "log_call_touch_1",
+            "trigger_sms_drip_day_1",
+            "update_last_contact_attempt"
+          ]
+        },
+        {
+          "id": "stage_acq_contacted",
+          "name": "Contact Made / Discovery Intake",
+          "order": 3,
+          "probability": 25,
+          "sla_target_hours": 48,
+          "score_range": [
+            5,
+            14
+          ],
+          "automations": [
+            "clear_sla_lead_new_timer",
+            "apply_tag_contacted",
+            "trigger_seller_intake_form_sms"
+          ]
+        },
+        {
+          "id": "stage_acq_appt_set",
+          "name": "Appointment / Call Scheduled",
+          "order": 4,
+          "probability": 45,
+          "sla_target_hours": 72,
+          "score_range": [
+            15,
+            24
+          ],
+          "automations": [
+            "apply_tag_appointment_set",
+            "add_points_motivation_6",
+            "send_calendar_confirmation_sms",
+            "dispatch_prep_dossier_to_rep"
+          ]
+        },
+        {
+          "id": "stage_acq_offer_prep",
+          "name": "Underwriting & Offer Prep",
+          "order": 5,
+          "probability": 60,
+          "sla_target_hours": 24,
+          "score_range": [
+            15,
+            29
+          ],
+          "automations": [
+            "create_task_underwrite_comps",
+            "calculate_max_allowable_offer_mao",
+            "populate_custom_field_asking_price"
+          ]
+        },
+        {
+          "id": "stage_acq_offer_sent",
+          "name": "Offer Extended / Negotiation",
+          "order": 6,
+          "probability": 75,
+          "sla_target_hours": 48,
+          "score_range": [
+            20,
+            35
+          ],
+          "automations": [
+            "apply_tag_offer_sent",
+            "add_points_motivation_8",
+            "start_ghosted_recovery_72h_listener",
+            "send_offer_summary_email"
+          ]
+        },
+        {
+          "id": "stage_acq_contract_sent",
+          "name": "Contract Out for Signature",
+          "order": 7,
+          "probability": 90,
+          "sla_target_hours": 24,
+          "score_range": [
+            25,
+            50
+          ],
+          "automations": [
+            "dispatch_ghl_esign_packet",
+            "send_esign_reminder_drip_4h",
+            "alert_sales_manager_contract_out"
+          ]
+        },
+        {
+          "id": "stage_acq_under_contract",
+          "name": "Under Contract (Handoff to TC)",
+          "order": 8,
+          "probability": 100,
+          "sla_target_hours": 4,
+          "score_range": [
+            30,
+            100
+          ],
+          "automations": [
+            "apply_tag_contract_signed",
+            "add_points_motivation_15",
+            "lock_seller_score",
+            "fire_webhook_tc_handoff"
+          ]
+        },
+        {
+          "id": "stage_acq_nurture",
+          "name": "Long-Term Nurture (Follow-Up)",
+          "order": 9,
+          "probability": 10,
+          "sla_target_hours": 720,
+          "score_range": [
+            5,
+            14
+          ],
+          "automations": [
+            "enroll_short_nurture_8_45d",
+            "apply_tag_nurture_active"
+          ]
+        },
+        {
+          "id": "stage_acq_dead",
+          "name": "Cold / Dead Lead Recycling",
+          "order": 10,
+          "probability": 0,
+          "sla_target_hours": 2880,
+          "score_range": [
+            0,
+            4
+          ],
+          "automations": [
+            "enroll_reactivation_blitz_120d",
+            "apply_tag_dead_recycle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pipe_acq_cold_call_v1",
+      "name": "Outbound Cold Caller Ingestion Pipeline",
+      "description": "High-volume skip-traced lead triage pipeline with direct QA audit checks.",
+      "stages": [
+        {
+          "id": "stage_cc_raw",
+          "name": "Raw Ingested Batch",
+          "order": 1,
+          "probability": 2
+        },
+        {
+          "id": "stage_cc_warm",
+          "name": "Cold Caller Verified Lead",
+          "order": 2,
+          "probability": 15
+        },
+        {
+          "id": "stage_cc_qa_audit",
+          "name": "Manager QA Recording Review",
+          "order": 3,
+          "probability": 30
+        },
+        {
+          "id": "stage_cc_senior_assigned",
+          "name": "Senior Closer Assigned",
+          "order": 4,
+          "probability": 50
+        },
+        {
+          "id": "stage_cc_converted",
+          "name": "Converted to Active Offer",
+          "order": 5,
+          "probability": 80
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "version": "1.9.0",
+  "sub_account": "03-dispositions",
+  "broadcast_sequences": [
+    {
+      "id": "seq_vip_first_look",
+      "target_tier": "TIER_1_VIP",
+      "delay_minutes": 0,
+      "sms_template": "🔥 EXCLUSIVE FIRST LOOK: {{property.address}}, {{property.city}} | Asking: {{deal.asking_price}} | ARV: {{deal.estimated_arv}} | Est. Net Profit: {{deal.estimated_spread}} | Lock it in 15 mins here: {{deal.packet_url}}",
+      "email_subject": "VIP First-Look Off-Market Opportunity: {{property.address}} ({{deal.estimated_spread}} Spread)"
+    },
+    {
+      "id": "seq_tier2_hot_blast",
+      "target_tier": "TIER_2_HOT",
+      "delay_minutes": 15,
+      "sms_template": "⚡ NEW DEAL DROP: {{property.address}} | Purchase: {{deal.asking_price}} | Rehab: {{deal.est_rehab}} | High ROI fix & flip or rental. View photos & submit offer: {{deal.packet_url}}",
+      "email_subject": "Hot Deal Alert: {{property.address}}, {{property.city}} (High Equity)"
+    },
+    {
+      "id": "seq_tier3_general_syndication",
+      "target_tier": "TIER_3_WARM",
+      "delay_minutes": 45,
+      "email_subject": "Off-Market Real Estate Packet Available: {{property.address}}",
+      "email_body_template": "Hello {{buyer.first_name}},\n\nA new off-market investment property is now available in {{property.city}}:\n\n- Address: {{property.address}}\n- Asking Price: {{deal.asking_price}}\n- Estimated ARV: {{deal.estimated_arv}}\n- Condition: As-Is Cash\n\nAccess the full investor diligence packet here: {{deal.packet_url}}"
+    },
+    {
+      "id": "seq_emd_timeout_reblast",
+      "target_tier": "TIER_2_HOT",
+      "delay_minutes": 0,
+      "trigger": "emd_countdown_sla_breach",
+      "sms_template": "🚨 BACK ON MARKET ALERT: Buyer failed wire deadline on {{property.address}}. Offered at {{deal.asking_price}} to next verified cash buyer. First wire secures deal: {{deal.packet_url}}",
+      "email_subject": "BACK ON MARKET: {{property.address}} (Immediate Wire Availability)"
+    }
+  ]
+}

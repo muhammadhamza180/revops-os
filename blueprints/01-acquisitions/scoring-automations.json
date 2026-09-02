@@ -1,0 +1,77 @@
+{
+  "version": "3.1.0",
+  "engine_name": "SellerMotivationScoringEngine",
+  "formula_definition": "Score_Seller = sum(Points_Engagement) - sum(Penalties_Decay)",
+  "point_values": {
+    "lead_new": 1,
+    "email_opened": 1,
+    "email_clicked": 2,
+    "sms_reply": 3,
+    "intake_complete": 3,
+    "call_connected": 4,
+    "appointment_set": 6,
+    "offer_sent": 8,
+    "contract_signed": 15
+  },
+  "decay_rules": [
+    {
+      "days_inactive": 14,
+      "penalty": 2,
+      "decay_tag": "decay_14d"
+    },
+    {
+      "days_inactive": 30,
+      "penalty": 4,
+      "decay_tag": "decay_30d"
+    },
+    {
+      "days_inactive": 60,
+      "penalty": 6,
+      "decay_tag": "decay_60d"
+    },
+    {
+      "days_inactive": 90,
+      "penalty": 15,
+      "decay_tag": "decay_90d"
+    }
+  ],
+  "score_tiers": [
+    {
+      "tier": "TIER_NEW_COLD",
+      "min_score": 0,
+      "max_score": 4,
+      "pipeline_stage": "stage_acq_new",
+      "drip_enrolled": "campaigns/high-frequency-0-7d.json",
+      "rep_sla": "Standard 24h first touch"
+    },
+    {
+      "tier": "TIER_NURTURE",
+      "min_score": 5,
+      "max_score": 14,
+      "pipeline_stage": "stage_acq_nurture",
+      "drip_enrolled": "campaigns/short-nurture-8-45d.json",
+      "rep_sla": "Bi-weekly soft touch"
+    },
+    {
+      "tier": "TIER_HOT_LEAD",
+      "min_score": 15,
+      "max_score": 29,
+      "pipeline_stage": "stage_acq_appt_set",
+      "drip_enrolled": null,
+      "rep_sla": "Urgent dial within 5 minutes; manager dashboard alert"
+    },
+    {
+      "tier": "TIER_LIVE_DEAL",
+      "min_score": 30,
+      "max_score": 100,
+      "pipeline_stage": "stage_acq_under_contract",
+      "drip_enrolled": null,
+      "rep_sla": "Active negotiation; score locked upon contract_signed"
+    }
+  ],
+  "clamping": {
+    "min_clamped_score": 0,
+    "max_clamped_score": 100
+  },
+  "score_lock_event": "contract_signed"
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GHLLeadScoringEvaluationPayload",
+  "type": "object",
+  "required": [
+    "lead_id",
+    "events",
+    "days_inactive"
+  ],
+  "properties": {
+    "lead_id": {
+      "type": "string"
+    },
+    "sub_account_id": {
+      "type": "string"
+    },
+    "current_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "lead_new",
+          "email_opened",
+          "email_clicked",
+          "sms_reply",
+          "intake_complete",
+          "call_connected",
+          "appointment_set",
+          "offer_sent",
+          "contract_signed"
+        ]
+      }
+    },
+    "days_inactive": {
+      "type": "number",
+      "minimum": 0
+    },
+    "is_locked": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

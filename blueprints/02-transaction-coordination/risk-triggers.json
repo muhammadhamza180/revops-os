@@ -1,0 +1,54 @@
+{
+  "version": "2.0.0",
+  "sub_account": "02-transaction-coordination",
+  "triggers": [
+    {
+      "id": "risk_missing_emd_48h",
+      "name": "Missing EMD Deposit at Title",
+      "severity": "CRITICAL",
+      "condition": "contract_signed_at > 48h AND title_emd_confirmed == false",
+      "action": "Trigger urgent SMS to TC manager; dispatch final warning notice to buyer; prepare contract cancellation notice.",
+      "sla_escalation_hours": 4
+    },
+    {
+      "id": "risk_title_defect_10d",
+      "name": "Unresolved Title Cloud / Lien at T-10d",
+      "severity": "HIGH",
+      "condition": "days_until_closing <= 10 AND title_commitment_has_exceptions == true",
+      "action": "Alert legal counsel; schedule seller lien resolution call; request payoff demand statement.",
+      "sla_escalation_hours": 12
+    },
+    {
+      "id": "risk_contractor_delay_24h",
+      "name": "Novation Contractor Milestone Past Due",
+      "severity": "HIGH",
+      "condition": "deal_type == 'novation' AND contractor_milestone_hours_overdue >= 24",
+      "action": "Withhold next draw milestone; schedule emergency on-site inspection.",
+      "sla_escalation_hours": 24
+    },
+    {
+      "id": "risk_buyer_financing_unconfirmed_3d",
+      "name": "Buyer Funding Unverified at T-3d",
+      "severity": "CRITICAL",
+      "condition": "days_until_closing <= 3 AND proof_of_wire_funds_received == false",
+      "action": "Alert Dispositions Manager; initiate backup buyer warm-up call queue.",
+      "sla_escalation_hours": 2
+    },
+    {
+      "id": "risk_hoa_packet_delay_7d",
+      "name": "HOA Resale Certificate Not Ordered",
+      "severity": "MEDIUM",
+      "condition": "property_in_hoa == true AND hoa_ordered_at == null AND days_since_contract >= 7",
+      "action": "Create high-priority task for TC admin; submit rush fee HOA order.",
+      "sla_escalation_hours": 24
+    },
+    {
+      "id": "risk_inspection_contingency_48h",
+      "name": "Inspection Contingency Window Closing (<48h)",
+      "severity": "HIGH",
+      "condition": "inspection_period_expires_in_hours <= 48 AND inspection_report_uploaded == false",
+      "action": "Send urgent notice to field inspector; file contingency extension addendum if needed.",
+      "sla_escalation_hours": 6
+    }
+  ]
+}

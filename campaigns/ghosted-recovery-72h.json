@@ -1,0 +1,154 @@
+{
+  "category": "Ghosted Post-Offer Recovery (72 Hours)",
+  "description": "High-conversion psychological turnaround sequence triggered when seller goes silent post-offer.",
+  "total_steps": 16,
+  "campaigns": [
+    {
+      "id": "gr_001",
+      "step": 1,
+      "hour": 2,
+      "channel": "SMS",
+      "name": "Post-Offer Thank You & Recap",
+      "copy": "Hi {{contact.first_name}}, thanks for taking the time to review our numbers on {{property.address}}! I sent the full breakdown to your email. Let me know if you have any questions!",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_002",
+      "step": 2,
+      "hour": 6,
+      "channel": "EMAIL",
+      "name": "Written Offer Packet & Walkthrough",
+      "subject": "Written cash offer summary: {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_003",
+      "step": 3,
+      "hour": 12,
+      "channel": "SMS",
+      "name": "Numbers Clarification",
+      "copy": "{{contact.first_name}}, just wanted to make sure the net calculation was clear — remember, we cover 100% of closing costs with zero fees deducted from your payout.",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_004",
+      "step": 4,
+      "hour": 18,
+      "channel": "TASK",
+      "name": "Post-Offer Discovery Call",
+      "instructions": "Rep follow-up dial to resolve price or terms friction.",
+      "stop_on_reply": false
+    },
+    {
+      "id": "gr_005",
+      "step": 5,
+      "hour": 24,
+      "channel": "SMS",
+      "name": "Day 1 Post-Offer Check",
+      "copy": "Morning {{contact.first_name}}! Did you have a chance to review the offer with your family?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_006",
+      "step": 6,
+      "hour": 30,
+      "channel": "EMAIL",
+      "name": "Overcoming the Top 3 Seller Objections",
+      "subject": "Questions on our offer for {{property.address}}?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_007",
+      "step": 7,
+      "hour": 36,
+      "channel": "SMS",
+      "name": "Terms Flexibility Option",
+      "copy": "{{contact.first_name}}, if the closing date or terms need adjusting, we have plenty of room to customize the agreement for you. What would work best on your timeline?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_008",
+      "step": 8,
+      "hour": 42,
+      "channel": "TASK",
+      "name": "Manager Escalation Call",
+      "instructions": "Sales Manager second-voice call to unblock seller hesitation.",
+      "stop_on_reply": false
+    },
+    {
+      "id": "gr_009",
+      "step": 9,
+      "hour": 48,
+      "channel": "SMS",
+      "name": "Chris Voss Takeaway SMS",
+      "copy": "Hi {{contact.first_name}}, have you given up on selling {{property.address}}?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_010",
+      "step": 10,
+      "hour": 54,
+      "channel": "EMAIL",
+      "name": "Offer Expiration Window",
+      "subject": "Holding your cash allocation for {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_011",
+      "step": 11,
+      "hour": 60,
+      "channel": "SMS",
+      "name": "Earnest Deposit Re-allocation Notice",
+      "copy": "{{contact.first_name}}, we can hold our earnest funds allocation for another 24 hours. Should I keep this reserved or release it to another property?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_012",
+      "step": 12,
+      "hour": 64,
+      "channel": "TASK",
+      "name": "Final Closer Dial",
+      "instructions": "Final live phone call attempt.",
+      "stop_on_reply": false
+    },
+    {
+      "id": "gr_013",
+      "step": 13,
+      "hour": 68,
+      "channel": "SMS",
+      "name": "Final Opportunity Nudge",
+      "copy": "Let me know if we should talk today before the current offer expires, {{contact.first_name}}!",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_014",
+      "step": 14,
+      "hour": 72,
+      "channel": "SMS",
+      "name": "Gentle Release & File Archival",
+      "copy": "Totally understand if the timing isn't right, {{contact.first_name}}. I'll close out this specific offer for now. Reach out anytime if things change!",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_015",
+      "step": 15,
+      "hour": 72,
+      "channel": "EMAIL",
+      "name": "Formal Offer Expiration Notice",
+      "subject": "Offer expired: {{property.address}} (Standing cash file archived)",
+      "stop_on_reply": true
+    },
+    {
+      "id": "gr_016",
+      "step": 16,
+      "hour": 72,
+      "channel": "AUTOMATION",
+      "name": "Transition to Short Nurture",
+      "actions": [
+        "apply_tag:ghosted_recovered_to_nurture",
+        "enroll_short_nurture_8_45d"
+      ],
+      "stop_on_reply": false
+    }
+  ]
+}

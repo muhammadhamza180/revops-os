@@ -1,0 +1,210 @@
+{
+  "category": "Reactivation Blitz (120+ Days)",
+  "description": "Aggressive wake-up campaign designed to revive cold or unresponsive records.",
+  "total_steps": 22,
+  "campaigns": [
+    {
+      "id": "rb_001",
+      "step": 1,
+      "day": 120,
+      "channel": "SMS",
+      "name": "Dean Jackson 9-Word Reactivation",
+      "copy": "Hi {{contact.first_name}}, are you still interested in selling {{property.address}}?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_002",
+      "step": 2,
+      "day": 121,
+      "channel": "EMAIL",
+      "name": "Fresh Cash Buyer Allocation",
+      "subject": "New buyer demand in {{property.zip}}",
+      "body": "Hi {{contact.first_name}},\n\nWe just allocated a fresh tranche of acquisition capital for homes in {{property.zip}}. We can close within 14 days on {{property.address}} with zero seller fees.\n\nAre you still open to receiving an offer?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_003",
+      "step": 3,
+      "day": 123,
+      "channel": "SMS",
+      "name": "Quick Cash Bump",
+      "copy": "{{contact.first_name}}, our buying criteria in {{property.city}} expanded. Are you free for a quick 2-minute update today?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_004",
+      "step": 4,
+      "day": 125,
+      "channel": "EMAIL",
+      "name": "Market Peak Update",
+      "subject": "Is it time to cash in on {{property.address}}?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_005",
+      "step": 5,
+      "day": 127,
+      "channel": "SMS",
+      "name": "Direct As-Is Reminder",
+      "copy": "Hey {{contact.first_name}}, no repairs, no commissions, cash in hand in 10 days. Still want an offer on {{property.address}}?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_006",
+      "step": 6,
+      "day": 129,
+      "channel": "TASK",
+      "name": "Blitz Outbound Dial",
+      "instructions": "Rep blitz dial. High-energy opening script.",
+      "stop_on_reply": false
+    },
+    {
+      "id": "rb_007",
+      "step": 7,
+      "day": 131,
+      "channel": "EMAIL",
+      "name": "Zero Hassle Seller Option",
+      "subject": "Skip the repairs and open houses on {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_008",
+      "step": 8,
+      "day": 133,
+      "channel": "SMS",
+      "name": "Short Check",
+      "copy": "{{contact.first_name}}, did you end up keeping {{property.address}} or did you already sell?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_009",
+      "step": 9,
+      "day": 135,
+      "channel": "EMAIL",
+      "name": "Inflation & Maintenance Defense",
+      "subject": "Protecting your equity against rising carrying costs",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_010",
+      "step": 10,
+      "day": 137,
+      "channel": "SMS",
+      "name": "Price Check",
+      "copy": "If we could get you a clean, fair number for {{property.address}} this month, would you consider it?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_011",
+      "step": 11,
+      "day": 139,
+      "channel": "TASK",
+      "name": "Blitz Dial #2",
+      "instructions": "Second blitz call attempt.",
+      "stop_on_reply": false
+    },
+    {
+      "id": "rb_012",
+      "step": 12,
+      "day": 141,
+      "channel": "EMAIL",
+      "name": "Flexible Move-Out Date",
+      "subject": "Close now, move when you are ready",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_013",
+      "step": 13,
+      "day": 143,
+      "channel": "SMS",
+      "name": "File Archival Warning",
+      "copy": "{{contact.first_name}}, I'm preparing to archive files for {{property.city}}. Should I take {{property.address}} off our acquisition list?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_014",
+      "step": 14,
+      "day": 145,
+      "channel": "EMAIL",
+      "name": "Final File Archival Notice",
+      "subject": "Final notice regarding your file on {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_015",
+      "step": 15,
+      "day": 147,
+      "channel": "SMS",
+      "name": "Reversal Takeaway",
+      "copy": "Sounds like the timing isn't right, which is completely fine! I'll close out your file for now.",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_016",
+      "step": 16,
+      "day": 149,
+      "channel": "EMAIL",
+      "name": "Standing Cash Offer Certificate",
+      "subject": "Your standing offer policy on {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_017",
+      "step": 17,
+      "day": 151,
+      "channel": "SMS",
+      "name": "Door Open SMS",
+      "copy": "Door is always open whenever you're ready, {{contact.first_name}}!",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_018",
+      "step": 18,
+      "day": 153,
+      "channel": "TASK",
+      "name": "Blitz Audit",
+      "instructions": "Mark dead lead if no reply.",
+      "stop_on_reply": false
+    },
+    {
+      "id": "rb_019",
+      "step": 19,
+      "day": 155,
+      "channel": "AUTOMATION",
+      "name": "Tag Dead Recycle",
+      "actions": [
+        "apply_tag:dead_recycle_ready"
+      ],
+      "stop_on_reply": false
+    },
+    {
+      "id": "rb_020",
+      "step": 20,
+      "day": 157,
+      "channel": "EMAIL",
+      "name": "Semi-Annual Recap",
+      "subject": "Semi-annual property digest for {{property.city}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_021",
+      "step": 21,
+      "day": 159,
+      "channel": "SMS",
+      "name": "Annual Check",
+      "copy": "Happy new season {{contact.first_name}}! Reach out if you ever need anything.",
+      "stop_on_reply": true
+    },
+    {
+      "id": "rb_022",
+      "step": 22,
+      "day": 160,
+      "channel": "AUTOMATION",
+      "name": "Lock File",
+      "actions": [
+        "apply_tag:blitz_completed"
+      ],
+      "stop_on_reply": false
+    }
+  ]
+}

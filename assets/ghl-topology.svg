@@ -1,0 +1,335 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" width="100%" height="100%" style="background:#090d16; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1322" />
+      <stop offset="50%" stop-color="#090d16" />
+      <stop offset="100%" stop-color="#05080f" />
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="cardGradAcq" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="cardGradTc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="cardGradDispo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="cardGradHub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2234" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0d131f" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Accent Line Gradients -->
+    <linearGradient id="cyanEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="emeraldAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="amberRose" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+    <linearGradient id="violetCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowEmerald" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowAmber" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowRose" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @keyframes pulse {
+        0%, 100% { opacity: 0.9; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.98); }
+      }
+      @keyframes flowDash {
+        to { stroke-dashoffset: -32; }
+      }
+      .node-pulse { animation: pulse 3s ease-in-out infinite; }
+      .flow-line { stroke-dasharray: 6, 6; animation: flowDash 2s linear infinite; }
+      .title-text { font-weight: 700; fill: #f8fafc; letter-spacing: -0.5px; }
+      .sub-text { font-size: 11px; fill: #94a3b8; }
+      .tag-badge { font-size: 9px; font-weight: 600; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect width="920" height="560" fill="url(#bgGlow)" />
+  <rect width="920" height="560" fill="none" stroke="#1e293b" stroke-width="1.5" />
+
+  <!-- Grid Dots (Subtle) -->
+  <g opacity="0.15">
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#64748b" />
+    </pattern>
+    <rect width="920" height="560" fill="url(#dotGrid)" />
+  </g>
+
+  <!-- Top Header Bar -->
+  <rect x="0" y="0" width="920" height="54" fill="#0b111e" stroke="#1e293b" stroke-width="1" />
+  <!-- Traffic lights -->
+  <circle cx="24" cy="27" r="5" fill="#f43f5e" />
+  <circle cx="40" cy="27" r="5" fill="#f59e0b" />
+  <circle cx="56" cy="27" r="5" fill="#10b981" />
+
+  <text x="80" y="32" class="title-text" font-size="14">Enterprise GoHighLevel RevOps Mesh — Multi-Tenant Sub-Account Architecture</text>
+  
+  <rect x="710" y="16" width="186" height="22" rx="11" fill="#1e293b" stroke="#334155" stroke-width="1" />
+  <circle cx="724" cy="27" r="4" fill="#10b981" class="node-pulse" />
+  <text x="735" y="31" font-size="10" font-weight="600" fill="#38bdf8">3 SUB-ACCOUNTS ACTIVE</text>
+
+  <!-- ==================== LEFT TIER: INGESTION HUB ==================== -->
+  <g id="tier-ingestion" transform="translate(24, 76)">
+    <!-- Main Hub Container -->
+    <rect width="180" height="460" rx="12" fill="url(#cardGradHub)" stroke="#334155" stroke-width="1.5" />
+    <rect x="0" y="0" width="180" height="38" rx="12" fill="#1e293b" opacity="0.6" />
+    <text x="14" y="24" class="title-text" font-size="12" fill="#38bdf8">00. INGESTION MATRIX</text>
+
+    <!-- Source Nodes -->
+    <!-- Node 1: Cold Callers -->
+    <g transform="translate(12, 50)">
+      <rect width="156" height="54" rx="8" fill="#131c2e" stroke="#0284c7" stroke-width="1" />
+      <circle cx="16" cy="27" r="4" fill="#38bdf8" />
+      <text x="28" y="22" font-size="11" font-weight="600" fill="#e2e8f0">Cold Caller Intake</text>
+      <text x="28" y="38" font-size="9" fill="#94a3b8">BatchLeads / CSV Skip-Trace</text>
+      <rect x="110" y="8" width="38" height="14" rx="7" fill="#0369a1" />
+      <text x="129" y="18" class="tag-badge" fill="#bae6fd">BATCH</text>
+    </g>
+
+    <!-- Node 2: Web Inbound -->
+    <g transform="translate(12, 114)">
+      <rect width="156" height="54" rx="8" fill="#131c2e" stroke="#059669" stroke-width="1" />
+      <circle cx="16" cy="27" r="4" fill="#10b981" />
+      <text x="28" y="22" font-size="11" font-weight="600" fill="#e2e8f0">Web Funnels &amp; Ads</text>
+      <text x="28" y="38" font-size="9" fill="#94a3b8">SEO / PPC Inbound Lead</text>
+      <rect x="115" y="8" width="33" height="14" rx="7" fill="#047857" />
+      <text x="131" y="18" class="tag-badge" fill="#a7f3d0">FORM</text>
+    </g>
+
+    <!-- Node 3: Voice AI Engine -->
+    <g transform="translate(12, 178)">
+      <rect width="156" height="54" rx="8" fill="#131c2e" stroke="#8b5cf6" stroke-width="1" />
+      <circle cx="16" cy="27" r="4" fill="#c084fc" />
+      <text x="28" y="22" font-size="11" font-weight="600" fill="#e2e8f0">Autonomous Voice AI</text>
+      <text x="28" y="38" font-size="9" fill="#94a3b8">Retell / Twilio Inbound</text>
+      <rect x="108" y="8" width="40" height="14" rx="7" fill="#6d28d9" />
+      <text x="128" y="18" class="tag-badge" fill="#e9d5ff">VOICE</text>
+    </g>
+
+    <!-- Node 4: Webhook Gateway -->
+    <g transform="translate(12, 242)">
+      <rect width="156" height="70" rx="8" fill="#0f172a" stroke="#d97706" stroke-width="1" />
+      <circle cx="16" cy="35" r="4" fill="#f59e0b" />
+      <text x="28" y="24" font-size="11" font-weight="600" fill="#fde68a">Webhook Gateway</text>
+      <text x="28" y="40" font-size="9" fill="#cbd5e1">HMAC Auth + Sanitization</text>
+      <text x="28" y="56" font-size="9" fill="#64748b">POST /api/webhooks/lead</text>
+    </g>
+
+    <!-- Pre-Flight Dedupe & Triage -->
+    <g transform="translate(12, 322)">
+      <rect width="156" height="126" rx="8" fill="#0b1322" stroke="#475569" stroke-width="1" />
+      <text x="14" y="22" font-size="10" font-weight="700" fill="#94a3b8">PRE-FLIGHT TRIAGE</text>
+      <text x="14" y="42" font-size="9" fill="#cbd5e1">• Phone Format &amp; DNC Check</text>
+      <text x="14" y="58" font-size="9" fill="#cbd5e1">• Duplicate Address Dedupe</text>
+      <text x="14" y="74" font-size="9" fill="#cbd5e1">• Tag: lead_new applied</text>
+      <text x="14" y="90" font-size="9" fill="#cbd5e1">• Init Motivation Score: 1 pt</text>
+      <text x="14" y="106" font-size="9" font-weight="600" fill="#38bdf8">→ Push to Sub-Account 01</text>
+    </g>
+  </g>
+
+  <!-- Flow Line 1: Ingestion -> Sub-Account 01 -->
+  <path d="M 204 220 L 244 220 L 244 140 L 268 140" fill="none" stroke="url(#cyanEmerald)" stroke-width="2" class="flow-line" filter="url(#glowCyan)" />
+
+  <!-- ==================== CENTER TIER: 3 SUB-ACCOUNTS ==================== -->
+  
+  <!-- SUB-ACCOUNT 01: ACQUISITIONS -->
+  <g id="sub-acq" transform="translate(268, 76)">
+    <rect width="360" height="142" rx="12" fill="url(#cardGradAcq)" stroke="#10b981" stroke-width="1.5" />
+    <rect x="0" y="0" width="360" height="32" rx="12" fill="#064e3b" opacity="0.6" />
+    <circle cx="16" cy="16" r="4" fill="#34d399" class="node-pulse" />
+    <text x="28" y="20" class="title-text" font-size="11" fill="#a7f3d0">SUB-ACCOUNT 01: ACQUISITIONS (LEAD INTAKE &amp; CONTRACTING)</text>
+    
+    <!-- Content columns -->
+    <g transform="translate(14, 42)">
+      <!-- Col 1: Scoring -->
+      <rect width="102" height="88" rx="6" fill="#09141d" stroke="#047857" stroke-width="1" />
+      <text x="8" y="16" font-size="9" font-weight="700" fill="#34d399">SCORING ENGINE</text>
+      <text x="8" y="32" font-size="8" fill="#94a3b8">+1 Lead / +1 Email</text>
+      <text x="8" y="46" font-size="8" fill="#94a3b8">+3 SMS / +4 Call</text>
+      <text x="8" y="60" font-size="8" fill="#94a3b8">+6 Appt / +8 Offer</text>
+      <text x="8" y="74" font-size="8" font-weight="600" fill="#6ee7b7">Decay: -2 (14d) .. -15</text>
+    </g>
+
+    <g transform="translate(124, 42)">
+      <!-- Col 2: SLA Escalation -->
+      <rect width="110" height="88" rx="6" fill="#09141d" stroke="#b45309" stroke-width="1" />
+      <text x="8" y="16" font-size="9" font-weight="700" fill="#fbbf24">SLA CLOCK (24/48h)</text>
+      <text x="8" y="32" font-size="8" fill="#fcd34d">T+0h: Lead Enters</text>
+      <text x="8" y="46" font-size="8" fill="#fcd34d">T+24h: Warning Alert</text>
+      <text x="8" y="60" font-size="8" fill="#f87171">T+48h: LEAD REVOKED</text>
+      <text x="8" y="74" font-size="8" fill="#60a5fa">Round-Robin Reassign</text>
+    </g>
+
+    <g transform="translate(242, 42)">
+      <!-- Col 3: 125+ Campaigns -->
+      <rect width="104" height="88" rx="6" fill="#09141d" stroke="#6d28d9" stroke-width="1" />
+      <text x="8" y="16" font-size="9" font-weight="700" fill="#c084fc">125+ CAMPAIGNS</text>
+      <text x="8" y="32" font-size="8" fill="#cbd5e1">0-7d Rapid Touch</text>
+      <text x="8" y="46" font-size="8" fill="#cbd5e1">8-45d Short Nurture</text>
+      <text x="8" y="60" font-size="8" fill="#cbd5e1">45-105d Long Nurture</text>
+      <text x="8" y="74" font-size="8" fill="#f43f5e">120d+ Reactivation</text>
+    </g>
+  </g>
+
+  <!-- Flow Line 2: ACQ -> TC (Executed Contract Trigger) -->
+  <path d="M 448 218 L 448 235" fill="none" stroke="url(#emeraldAmber)" stroke-width="2" class="flow-line" filter="url(#glowEmerald)" />
+  <rect x="408" y="220" width="80" height="14" rx="7" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+  <text x="448" y="230" class="tag-badge" fill="#a7f3d0">contract_signed</text>
+
+  <!-- SUB-ACCOUNT 02: TRANSACTION COORDINATION (TC) -->
+  <g id="sub-tc" transform="translate(268, 235)">
+    <rect width="360" height="142" rx="12" fill="url(#cardGradTc)" stroke="#f59e0b" stroke-width="1.5" />
+    <rect x="0" y="0" width="360" height="32" rx="12" fill="#78350f" opacity="0.6" />
+    <circle cx="16" cy="16" r="4" fill="#fbbf24" class="node-pulse" />
+    <text x="28" y="20" class="title-text" font-size="11" fill="#fde68a">SUB-ACCOUNT 02: TRANSACTION COORDINATION (5-DEAL ROUTING)</text>
+    
+    <g transform="translate(14, 42)">
+      <!-- 5 Deal Types Switchboard -->
+      <rect width="158" height="88" rx="6" fill="#131422" stroke="#b45309" stroke-width="1" />
+      <text x="8" y="16" font-size="9" font-weight="700" fill="#fde68a">5 DEAL-TYPE ROUTING TREES</text>
+      <text x="8" y="32" font-size="8" fill="#e2e8f0">1. Wholesale Assignment (Escrow/PSA)</text>
+      <text x="8" y="46" font-size="8" fill="#e2e8f0">2. Novation (POA / MLS Syndication)</text>
+      <text x="8" y="60" font-size="8" fill="#e2e8f0">3. Creative Finance (Sub-To / Wrap)</text>
+      <text x="8" y="74" font-size="8" fill="#e2e8f0">4. Retail MLS Listing | 5. JV Partner</text>
+    </g>
+
+    <g transform="translate(180, 42)">
+      <!-- Predictive Risk Alarms & Document Slots -->
+      <rect width="166" height="88" rx="6" fill="#131422" stroke="#991b1b" stroke-width="1" />
+      <text x="8" y="16" font-size="9" font-weight="700" fill="#f87171">PREDICTIVE RISK TRIGGERS</text>
+      <text x="8" y="30" font-size="8" fill="#fca5a5">🚨 Missing EMD (48h past PSA)</text>
+      <text x="8" y="44" font-size="8" fill="#fca5a5">🚨 Title Delay (10d to Close)</text>
+      <text x="8" y="58" font-size="8" fill="#fca5a5">🚨 Vendor/Inspection (24h past)</text>
+      <text x="8" y="74" font-size="8" font-weight="600" fill="#38bdf8">16 Document Slots Enforced</text>
+    </g>
+  </g>
+
+  <!-- Flow Line 3: TC -> DISPO (Clear for Disposition) -->
+  <path d="M 448 377 L 448 394" fill="none" stroke="url(#amberRose)" stroke-width="2" class="flow-line" filter="url(#glowAmber)" />
+  <rect x="402" y="379" width="92" height="14" rx="7" fill="#78350f" stroke="#f59e0b" stroke-width="1" />
+  <text x="448" y="389" class="tag-badge" fill="#fde68a">ready_for_dispo</text>
+
+  <!-- SUB-ACCOUNT 03: DISPOSITIONS -->
+  <g id="sub-dispo" transform="translate(268, 394)">
+    <rect width="360" height="142" rx="12" fill="url(#cardGradDispo)" stroke="#f43f5e" stroke-width="1.5" />
+    <rect x="0" y="0" width="360" height="32" rx="12" fill="#881337" opacity="0.6" />
+    <circle cx="16" cy="16" r="4" fill="#fb7185" class="node-pulse" />
+    <text x="28" y="20" class="title-text" font-size="11" fill="#fecdd3">SUB-ACCOUNT 03: DISPOSITIONS (BUYER SCORING &amp; EMD SLA)</text>
+    
+    <g transform="translate(14, 42)">
+      <!-- Buyer Gamification & Tiers -->
+      <rect width="158" height="88" rx="6" fill="#18111e" stroke="#be123c" stroke-width="1" />
+      <text x="8" y="16" font-size="9" font-weight="700" fill="#fda4af">BUYER QUALIFICATION MATRIX</text>
+      <text x="8" y="30" font-size="8" fill="#e2e8f0">Score = 35% POF + 25% Velocity</text>
+      <text x="8" y="44" font-size="8" fill="#e2e8f0">+ 25% Speed + 15% BuyBox</text>
+      <text x="8" y="58" font-size="8" fill="#a7f3d0">Tier 1 VIP (85-100) | Tier 2 Hot</text>
+      <text x="8" y="74" font-size="8" fill="#94a3b8">Tier 3 Warm | Tier 4 Cold</text>
+    </g>
+
+    <g transform="translate(180, 42)">
+      <!-- 90-Min Countdown & Reblast -->
+      <rect width="166" height="88" rx="6" fill="#18111e" stroke="#991b1b" stroke-width="1" />
+      <text x="8" y="16" font-size="9" font-weight="700" fill="#f87171">90-MIN EMD COUNTDOWN SLA</text>
+      <text x="8" y="30" font-size="8" fill="#fcd34d">T+0m: Verbal Lock &amp; Wire Sent</text>
+      <text x="8" y="44" font-size="8" fill="#f87171">T+90m: Wire Missing? REBLAST</text>
+      <text x="8" y="58" font-size="8" fill="#f43f5e">Penalty: -50 Pts to Buyer Score</text>
+      <text x="8" y="74" font-size="8" font-weight="600" fill="#38bdf8">Auto-SMS Broadcast to Tier 2</text>
+    </g>
+  </g>
+
+  <!-- Flow Line 4: Center Sub-Accounts -> Fulfillment Hub -->
+  <path d="M 628 306 L 684 306" fill="none" stroke="url(#violetCyan)" stroke-width="2" class="flow-line" filter="url(#glowCyan)" />
+
+  <!-- ==================== RIGHT TIER: FULFILLMENT & TELEMETRY ==================== -->
+  <g id="tier-fulfillment" transform="translate(684, 76)">
+    <rect width="212" height="460" rx="12" fill="url(#cardGradHub)" stroke="#334155" stroke-width="1.5" />
+    <rect x="0" y="0" width="212" height="38" rx="12" fill="#1e293b" opacity="0.6" />
+    <text x="14" y="24" class="title-text" font-size="12" fill="#38bdf8">04. CLOSING &amp; BI TELEMETRY</text>
+
+    <!-- Node 1: DocuSign / E-Sign -->
+    <g transform="translate(12, 50)">
+      <rect width="188" height="54" rx="8" fill="#131c2e" stroke="#38bdf8" stroke-width="1" />
+      <circle cx="16" cy="27" r="4" fill="#38bdf8" />
+      <text x="28" y="22" font-size="11" font-weight="600" fill="#e2e8f0">DocuSign / GHL E-Sign</text>
+      <text x="28" y="38" font-size="9" fill="#94a3b8">PSA &amp; Assignment Execution</text>
+    </g>
+
+    <!-- Node 2: Title Escrow -->
+    <g transform="translate(12, 114)">
+      <rect width="188" height="54" rx="8" fill="#131c2e" stroke="#10b981" stroke-width="1" />
+      <circle cx="16" cy="27" r="4" fill="#10b981" />
+      <text x="28" y="22" font-size="11" font-weight="600" fill="#e2e8f0">Title Company &amp; Escrow</text>
+      <text x="28" y="38" font-size="9" fill="#94a3b8">Wire Verification &amp; HUD Prep</text>
+    </g>
+
+    <!-- Node 3: Payout Engine -->
+    <g transform="translate(12, 178)">
+      <rect width="188" height="54" rx="8" fill="#131c2e" stroke="#f59e0b" stroke-width="1" />
+      <circle cx="16" cy="27" r="4" fill="#f59e0b" />
+      <text x="28" y="22" font-size="11" font-weight="600" fill="#e2e8f0">Disbursement &amp; Profit</text>
+      <text x="28" y="38" font-size="9" fill="#94a3b8">Assignment Fee / JV Splits</text>
+    </g>
+
+    <!-- Node 4: KPI Live Monitor -->
+    <g transform="translate(12, 242)">
+      <rect width="188" height="206" rx="8" fill="#0b1322" stroke="#475569" stroke-width="1" />
+      <text x="12" y="20" font-size="10" font-weight="700" fill="#94a3b8">REAL-TIME REV-OPS TELEMETRY</text>
+      
+      <!-- Metric 1 -->
+      <text x="12" y="44" font-size="9" fill="#64748b">Pipeline Deal Capacity</text>
+      <text x="12" y="58" font-size="12" font-weight="700" fill="#34d399">30+ Simultaneous Deals</text>
+      
+      <!-- Metric 2 -->
+      <text x="12" y="82" font-size="9" fill="#64748b">Lead Fall-Through / Leakage</text>
+      <text x="12" y="96" font-size="12" font-weight="700" fill="#38bdf8">0.0% (5-Tier SLA Guard)</text>
+
+      <!-- Metric 3 -->
+      <text x="12" y="120" font-size="9" fill="#64748b">EMD Collection Acceleration</text>
+      <text x="12" y="134" font-size="12" font-weight="700" fill="#fbbf24">90-Min SLA (85% Faster)</text>
+
+      <!-- Metric 4 -->
+      <text x="12" y="158" font-size="9" fill="#64748b">First-Contact SLA Compliance</text>
+      <text x="12" y="172" font-size="12" font-weight="700" fill="#f43f5e">100% Round-Robin Enforced</text>
+
+      <!-- Metric 5 -->
+      <text x="12" y="196" font-size="8" font-weight="600" fill="#818cf8">Architecture: 100% Sanitized &amp; Scalable</text>
+    </g>
+  </g>
+
+  <!-- Footer Watermark / Portfolio Standard -->
+  <text x="24" y="548" font-size="9" fill="#475569">Muhammad Hamza Portfolio Ecosystem • Enterprise GoHighLevel RevOps Mesh • Built for High-Volume Deal Orchestration</text>
+</svg>

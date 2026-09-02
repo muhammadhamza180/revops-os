@@ -1,0 +1,229 @@
+{
+  "category": "Email-Only Intake Drips (No Phone Available)",
+  "description": "High-converting email sequences designed to capture seller phone numbers and schedule discovery calls.",
+  "total_steps": 22,
+  "campaigns": [
+    {
+      "id": "np_001",
+      "step": 1,
+      "day": 0,
+      "hour": 0,
+      "channel": "EMAIL",
+      "name": "Instant Property Intake Confirmation",
+      "subject": "We received your property details for {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_002",
+      "step": 2,
+      "day": 0,
+      "hour": 4,
+      "channel": "EMAIL",
+      "name": "Request Phone Number for Instant Offer",
+      "subject": "What is the best direct number to discuss your offer?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_003",
+      "step": 3,
+      "day": 1,
+      "hour": 10,
+      "channel": "EMAIL",
+      "name": "As-Is Cash Valuation Process",
+      "subject": "How our property underwriting works in {{property.city}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_004",
+      "step": 4,
+      "day": 2,
+      "hour": 14,
+      "channel": "EMAIL",
+      "name": "Recent Sales Comps Report",
+      "subject": "Comps report for {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_005",
+      "step": 5,
+      "day": 3,
+      "hour": 9,
+      "channel": "EMAIL",
+      "name": "1-Click Calendar Booking Invite",
+      "subject": "Choose a 5-minute slot for your property valuation",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_006",
+      "step": 6,
+      "day": 5,
+      "hour": 11,
+      "channel": "EMAIL",
+      "name": "Zero Commissions Breakdown",
+      "subject": "Keep 100% of your equity when selling to us",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_007",
+      "step": 7,
+      "day": 7,
+      "hour": 15,
+      "channel": "EMAIL",
+      "name": "No Cleaning or Repair Policy",
+      "subject": "Leave behind whatever you don't want",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_008",
+      "step": 8,
+      "day": 9,
+      "hour": 10,
+      "channel": "EMAIL",
+      "name": "Seller Video Testimonial",
+      "subject": "Video: How this homeowner closed in 9 days",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_009",
+      "step": 9,
+      "day": 12,
+      "hour": 14,
+      "channel": "EMAIL",
+      "name": "Flexible Closing Date Selector",
+      "subject": "You pick your exact move-out date",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_010",
+      "step": 10,
+      "day": 15,
+      "hour": 10,
+      "channel": "EMAIL",
+      "name": "Local Market Shift Bulletin",
+      "subject": "Market update for {{property.zip}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_011",
+      "step": 11,
+      "day": 18,
+      "hour": 13,
+      "channel": "EMAIL",
+      "name": "Probate & Estate Solutions",
+      "subject": "Handling estate and probate sales with ease",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_012",
+      "step": 12,
+      "day": 21,
+      "hour": 16,
+      "channel": "EMAIL",
+      "name": "Monthly Property Equity Snapshot",
+      "subject": "Estimated equity value for {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_013",
+      "step": 13,
+      "day": 25,
+      "hour": 9,
+      "channel": "EMAIL",
+      "name": "Tax Planning Before You Sell",
+      "subject": "Tax considerations for real estate sellers",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_014",
+      "step": 14,
+      "day": 30,
+      "hour": 14,
+      "channel": "EMAIL",
+      "name": "30-Day Check-in Survey",
+      "subject": "Quick question on your plans for {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_015",
+      "step": 15,
+      "day": 35,
+      "hour": 11,
+      "channel": "EMAIL",
+      "name": "Case Study: Fast Escrow Settlement",
+      "subject": "Behind the scenes of an escrow closing",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_016",
+      "step": 16,
+      "day": 40,
+      "hour": 15,
+      "channel": "EMAIL",
+      "name": "Tenant-Occupied Home Solutions",
+      "subject": "Selling a rental property with tenants in place",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_017",
+      "step": 17,
+      "day": 45,
+      "hour": 10,
+      "channel": "EMAIL",
+      "name": "45-Day Valuation Refresh",
+      "subject": "Fresh valuation numbers for {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_018",
+      "step": 18,
+      "day": 52,
+      "hour": 14,
+      "channel": "EMAIL",
+      "name": "Downsizing Simplified",
+      "subject": "How to downsize without the headache",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_019",
+      "step": 19,
+      "day": 60,
+      "hour": 10,
+      "channel": "EMAIL",
+      "name": "Bi-Monthly Equity Check",
+      "subject": "Bi-monthly property update for {{property.city}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_020",
+      "step": 20,
+      "day": 75,
+      "hour": 13,
+      "channel": "EMAIL",
+      "name": "Standing Cash Offer Reminder",
+      "subject": "Our offer policy remains active on {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_021",
+      "step": 21,
+      "day": 90,
+      "hour": 10,
+      "channel": "EMAIL",
+      "name": "Quarterly Inactive File Notice",
+      "subject": "Final quarterly update on {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "np_022",
+      "step": 22,
+      "day": 90,
+      "hour": 12,
+      "channel": "AUTOMATION",
+      "name": "Transition to Quarterly Digest",
+      "actions": [
+        "apply_tag:email_only_nurture_complete"
+      ],
+      "stop_on_reply": false
+    }
+  ]
+}

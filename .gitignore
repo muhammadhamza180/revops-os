@@ -1,0 +1,27 @@
+# Node artifacts
+node_modules/
+dist/
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & credentials (Sanitization Defense)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+scratch/
+tmp/

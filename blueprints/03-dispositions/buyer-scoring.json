@@ -1,0 +1,128 @@
+{
+  "version": "2.5.0",
+  "sub_account": "03-dispositions",
+  "formula_definition": "Score_Buyer = (0.35 * S_POF) + (0.25 * S_Velocity) + (0.25 * S_Response) + (0.15 * S_BuyBox) - Penalties",
+  "weights": {
+    "proof_of_funds_pof": 0.35,
+    "transaction_velocity": 0.25,
+    "response_speed": 0.25,
+    "buy_box_alignment": 0.15
+  },
+  "sub_score_rules": {
+    "S_POF": [
+      {
+        "condition": "verified_liquid_cash >= 1000000",
+        "points": 100
+      },
+      {
+        "condition": "verified_liquid_cash >= 250000",
+        "points": 75
+      },
+      {
+        "condition": "hard_money_preapproval_verified == true",
+        "points": 50
+      },
+      {
+        "condition": "unverified_funds == true",
+        "points": 0
+      }
+    ],
+    "S_Velocity": [
+      {
+        "condition": "deals_closed_90d >= 3",
+        "points": 100
+      },
+      {
+        "condition": "deals_closed_90d >= 1",
+        "points": 70
+      },
+      {
+        "condition": "deals_closed_90d == 0",
+        "points": 30
+      }
+    ],
+    "S_Response": [
+      {
+        "condition": "avg_response_minutes <= 15",
+        "points": 100
+      },
+      {
+        "condition": "avg_response_minutes <= 60",
+        "points": 70
+      },
+      {
+        "condition": "avg_response_minutes <= 1440",
+        "points": 40
+      },
+      {
+        "condition": "avg_response_minutes > 1440",
+        "points": 10
+      }
+    ],
+    "S_BuyBox": [
+      {
+        "condition": "strict_zip_and_asset_match == true",
+        "points": 100
+      },
+      {
+        "condition": "adjacent_county_match == true",
+        "points": 60
+      },
+      {
+        "condition": "no_match == true",
+        "points": 10
+      }
+    ]
+  },
+  "penalties": {
+    "missed_90min_emd_deadline": -50,
+    "reneged_verbal_agreement": -30,
+    "unauthorized_seller_contact": -100
+  },
+  "buyer_tiers": [
+    {
+      "tier": "TIER_1_VIP",
+      "name": "Tier 1 — VIP Cash Buyers",
+      "min_score": 85,
+      "max_score": 100,
+      "broadcast_window": "Minutes 0 to 15 (Exclusive First Look)",
+      "channels": [
+        "Direct SMS Blast",
+        "Priority Call Dispatch",
+        "Instant Deal Packet URL"
+      ]
+    },
+    {
+      "tier": "TIER_2_HOT",
+      "name": "Tier 2 — Hot Cash Investors",
+      "min_score": 65,
+      "max_score": 84,
+      "broadcast_window": "Minutes 15 to 45 (Secondary Window / Instant EMD Reblast Target)",
+      "channels": [
+        "Targeted SMS",
+        "Email Broadcast"
+      ]
+    },
+    {
+      "tier": "TIER_3_WARM",
+      "name": "Tier 3 — General Investor Pool",
+      "min_score": 45,
+      "max_score": 64,
+      "broadcast_window": "Hour 1+ (General Syndication)",
+      "channels": [
+        "Email Newsletter",
+        "Web Portal Listing"
+      ]
+    },
+    {
+      "tier": "TIER_4_COLD",
+      "name": "Tier 4 — Cold / Unverified Pool",
+      "min_score": 0,
+      "max_score": 44,
+      "broadcast_window": "Weekly Digest Only",
+      "channels": [
+        "Weekly Email Digest"
+      ]
+    }
+  ]
+}

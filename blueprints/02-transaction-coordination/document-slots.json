@@ -1,0 +1,127 @@
+{
+  "version": "1.5.0",
+  "sub_account": "02-transaction-coordination",
+  "slots": [
+    {
+      "slot_id": "executed_purchase_agreement",
+      "name": "Executed Purchase and Sale Agreement (PSA)",
+      "required": true,
+      "mime_types": [
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "seller_id_verification",
+      "name": "Government Photo ID (Seller)",
+      "required": true,
+      "mime_types": [
+        "image/jpeg",
+        "image/png",
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "title_commitment_prelim",
+      "name": "Preliminary Title Commitment",
+      "required": true,
+      "mime_types": [
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "assignment_agreement_buyer",
+      "name": "Executed Assignment of Contract",
+      "required": false,
+      "mime_types": [
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "buyer_earnest_money_receipt",
+      "name": "Title Company EMD Wire Receipt",
+      "required": true,
+      "mime_types": [
+        "application/pdf",
+        "image/png"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "settlement_statement_hud",
+      "name": "Closing ALTA / Settlement Statement",
+      "required": true,
+      "mime_types": [
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "novation_agreement_signed",
+      "name": "Signed Novation Agreement",
+      "required": false,
+      "mime_types": [
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "limited_power_of_attorney",
+      "name": "Notarized Power of Attorney",
+      "required": false,
+      "mime_types": [
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "subject_to_addendum",
+      "name": "Subject-To Financing Addendum",
+      "required": false,
+      "mime_types": [
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "existing_mortgage_statements_3mo",
+      "name": "3 Months Underlying Mortgage Statements",
+      "required": false,
+      "mime_types": [
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "hazard_insurance_loss_payee",
+      "name": "Insurance Certificate with Loss Payee Named",
+      "required": false,
+      "mime_types": [
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "executed_jv_operating_agreement",
+      "name": "Executed JV Co-Wholesaling Agreement",
+      "required": false,
+      "mime_types": [
+        "application/pdf"
+      ],
+      "retention_years": 7
+    },
+    {
+      "slot_id": "property_photos_inspection_zip",
+      "name": "High-Res Property Photos & Inspection Archive",
+      "required": true,
+      "mime_types": [
+        "application/zip",
+        "application/pdf"
+      ],
+      "retention_years": 7
+    }
+  ]
+}

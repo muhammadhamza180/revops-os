@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GHLDispoReblastPayload",
+  "type": "object",
+  "required": [
+    "deal_id",
+    "reason",
+    "target_tier",
+    "deal_packet"
+  ],
+  "properties": {
+    "deal_id": {
+      "type": "string"
+    },
+    "sub_account_id": {
+      "type": "string",
+      "default": "03-dispositions"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "emd_timeout_breach",
+        "buyer_reneged",
+        "price_reduction",
+        "initial_broadcast"
+      ]
+    },
+    "defaulted_buyer_id": {
+      "type": "string"
+    },
+    "target_tier": {
+      "type": "string",
+      "enum": [
+        "TIER_1_VIP",
+        "TIER_2_HOT",
+        "TIER_3_WARM"
+      ]
+    },
+    "deal_packet": {
+      "type": "object",
+      "required": [
+        "address",
+        "city",
+        "state",
+        "asking_price",
+        "estimated_arv",
+        "packet_url"
+      ],
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "asking_price": {
+          "type": "number"
+        },
+        "estimated_arv": {
+          "type": "number"
+        },
+        "estimated_rehab": {
+          "type": "number"
+        },
+        "packet_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "broadcast_metrics": {
+      "type": "object",
+      "properties": {
+        "recipients_queued": {
+          "type": "number"
+        },
+        "dispatch_timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

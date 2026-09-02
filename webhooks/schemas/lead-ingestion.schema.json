@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GHLInboundLeadIngestionPayload",
+  "type": "object",
+  "required": [
+    "source",
+    "contact",
+    "property"
+  ],
+  "properties": {
+    "source": {
+      "type": "string",
+      "enum": [
+        "cold_caller_intake",
+        "web_funnel",
+        "batchleads_webhook",
+        "inbound_call",
+        "retell_voice_agent",
+        "referral"
+      ]
+    },
+    "sub_account_id": {
+      "type": "string",
+      "default": "sub_acq_enterprise_01"
+    },
+    "contact": {
+      "type": "object",
+      "required": [
+        "first_name",
+        "phone"
+      ],
+      "properties": {
+        "first_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string",
+          "pattern": "^\\+?[1-9]\\d{1,14}$"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "preferred_contact_method": {
+          "type": "string",
+          "enum": [
+            "sms",
+            "call",
+            "email",
+            "portal"
+          ]
+        }
+      }
+    },
+    "property": {
+      "type": "object",
+      "required": [
+        "address",
+        "city",
+        "state",
+        "zip"
+      ],
+      "properties": {
+        "address": {
+          "type": "string",
+          "minLength": 3
+        },
+        "city": {
+          "type": "string",
+          "minLength": 2
+        },
+        "state": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "zip": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 10
+        },
+        "asking_price": {
+          "type": "number",
+          "minimum": 0
+        },
+        "estimated_arv": {
+          "type": "number",
+          "minimum": 0
+        },
+        "estimated_rehab": {
+          "type": "number",
+          "minimum": 0
+        },
+        "seller_urgency": {
+          "type": "string",
+          "enum": [
+            "high_30d",
+            "medium_60d",
+            "low_90d+"
+          ]
+        },
+        "occupancy_status": {
+          "type": "string",
+          "enum": [
+            "vacant",
+            "owner_occupied",
+            "tenant_occupied"
+          ]
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "campaign_id": {
+          "type": "string"
+        },
+        "caller_agent_id": {
+          "type": "string"
+        },
+        "ip_address": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

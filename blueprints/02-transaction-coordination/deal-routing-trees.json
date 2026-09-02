@@ -1,0 +1,214 @@
+{
+  "version": "2.2.0",
+  "sub_account": "02-transaction-coordination",
+  "deal_types": [
+    {
+      "type_id": "wholesale_assignment",
+      "name": "Wholesale Assignment Route",
+      "description": "Standard double-ended purchase agreement with assignment of equitable interest.",
+      "target_days_to_close": 21,
+      "required_document_slots": [
+        "executed_purchase_agreement",
+        "seller_id_verification",
+        "title_commitment_prelim",
+        "assignment_agreement_buyer",
+        "buyer_earnest_money_receipt",
+        "settlement_statement_hud"
+      ],
+      "milestone_task_chain": [
+        {
+          "id": "tc_ws_1",
+          "step": "Open Escrow with Title Company",
+          "due_hours_from_contract": 12
+        },
+        {
+          "id": "tc_ws_2",
+          "step": "Verify Seller EMD Wire Confirmation",
+          "due_hours_from_contract": 48
+        },
+        {
+          "id": "tc_ws_3",
+          "step": "Dispatch Inspector / Photo Walkthrough",
+          "due_days_from_contract": 4
+        },
+        {
+          "id": "tc_ws_4",
+          "step": "Hand off Cleared Deal Packet to Sub-Account 03 (Dispo)",
+          "due_days_from_contract": 5
+        },
+        {
+          "id": "tc_ws_5",
+          "step": "Review Executed Assignment & Title Wire",
+          "due_days_from_contract": 14
+        },
+        {
+          "id": "tc_ws_6",
+          "step": "Sign Closing Statement & Collect Fee",
+          "due_days_from_contract": 21
+        }
+      ]
+    },
+    {
+      "type_id": "novation",
+      "name": "Novation Agreement Route",
+      "description": "Seller authorizes property renovation and MLS listing with guaranteed net proceeds payout.",
+      "target_days_to_close": 60,
+      "required_document_slots": [
+        "novation_agreement_signed",
+        "limited_power_of_attorney",
+        "seller_net_sheet_guarantee",
+        "contractor_scope_of_work",
+        "mls_listing_agreement",
+        "retail_buyer_purchase_contract"
+      ],
+      "milestone_task_chain": [
+        {
+          "id": "tc_nov_1",
+          "step": "Execute Notarized Novation & POA with Seller",
+          "due_hours_from_contract": 24
+        },
+        {
+          "id": "tc_nov_2",
+          "step": "Contractor Bid & Material Procurement Walkthrough",
+          "due_days_from_contract": 5
+        },
+        {
+          "id": "tc_nov_3",
+          "step": "Execute Cosmetics / Repairs (14-Day Sprint)",
+          "due_days_from_contract": 19
+        },
+        {
+          "id": "tc_nov_4",
+          "step": "Professional Photography & MLS Syndication",
+          "due_days_from_contract": 22
+        },
+        {
+          "id": "tc_nov_5",
+          "step": "Accept Retail Buyer Contract & Open Retail Escrow",
+          "due_days_from_contract": 35
+        },
+        {
+          "id": "tc_nov_6",
+          "step": "Dual Settlement Closing (Seller Net + Spread Payout)",
+          "due_days_from_contract": 60
+        }
+      ]
+    },
+    {
+      "type_id": "creative_finance",
+      "name": "Creative Finance (Subject-To / Seller Carry)",
+      "description": "Acquiring subject to existing debt or structured seller financing wrap note.",
+      "target_days_to_close": 30,
+      "required_document_slots": [
+        "subject_to_addendum",
+        "existing_mortgage_statements_3mo",
+        "authorization_to_release_info",
+        "deed_of_trust_warranty_deed",
+        "hazard_insurance_loss_payee_endorsement",
+        "third_party_servicing_setup_form",
+        "due_on_sale_disclosure_acknowledgment"
+      ],
+      "milestone_task_chain": [
+        {
+          "id": "tc_cf_1",
+          "step": "Order Formal Mortgage Payoff & Reinstatement Quote",
+          "due_hours_from_contract": 24
+        },
+        {
+          "id": "tc_cf_2",
+          "step": "Verify Underlying PITI, Interest Rate & Escrow Balance",
+          "due_days_from_contract": 3
+        },
+        {
+          "id": "tc_cf_3",
+          "step": "Submit Escrow Servicing Packet to Weststar / EscrowServicing",
+          "due_days_from_contract": 7
+        },
+        {
+          "id": "tc_cf_4",
+          "step": "Update Homeowners Insurance with Loss Payee Named",
+          "due_days_from_contract": 14
+        },
+        {
+          "id": "tc_cf_5",
+          "step": "Execute Warranty Deed & Record Title Transfer",
+          "due_days_from_contract": 30
+        }
+      ]
+    },
+    {
+      "type_id": "retail_mls",
+      "name": "Retail MLS Listing Route",
+      "description": "Licensed brokerage listing route for maximum market value disposition.",
+      "target_days_to_close": 45,
+      "required_document_slots": [
+        "exclusive_right_to_sell_listing_agreement",
+        "seller_property_condition_disclosure",
+        "lead_based_paint_disclosure",
+        "mls_input_sheet",
+        "professional_media_packet"
+      ],
+      "milestone_task_chain": [
+        {
+          "id": "tc_mls_1",
+          "step": "Sign Brokerage Listing Documents",
+          "due_hours_from_contract": 24
+        },
+        {
+          "id": "tc_mls_2",
+          "step": "Schedule 3D Virtual Tour & Drone Media",
+          "due_days_from_contract": 3
+        },
+        {
+          "id": "tc_mls_3",
+          "step": "Publish Live to Regional MLS & Real-Time Syndication",
+          "due_days_from_contract": 5
+        },
+        {
+          "id": "tc_mls_4",
+          "step": "Review Offer Matrix with Seller",
+          "due_days_from_contract": 15
+        },
+        {
+          "id": "tc_mls_5",
+          "step": "Escrow Closing & Commission Payout",
+          "due_days_from_contract": 45
+        }
+      ]
+    },
+    {
+      "type_id": "joint_venture",
+      "name": "Joint Venture (JV) Co-Wholesale Route",
+      "description": "Partner deal collaboration with defined profit split schedules.",
+      "target_days_to_close": 21,
+      "required_document_slots": [
+        "executed_jv_operating_agreement",
+        "primary_seller_purchase_contract",
+        "joint_closing_instruction_to_title",
+        "partner_w9_identification"
+      ],
+      "milestone_task_chain": [
+        {
+          "id": "tc_jv_1",
+          "step": "Sign JV Co-Wholesaling Agreement (50/50 Split)",
+          "due_hours_from_contract": 12
+        },
+        {
+          "id": "tc_jv_2",
+          "step": "Confirm Escrow Title Instructions with Partner",
+          "due_hours_from_contract": 24
+        },
+        {
+          "id": "tc_jv_3",
+          "step": "Syndicate Deal Packet to Shared Buyer Database",
+          "due_days_from_contract": 2
+        },
+        {
+          "id": "tc_jv_4",
+          "step": "Final Closing & Wire Fee Split Disbursement",
+          "due_days_from_contract": 21
+        }
+      ]
+    }
+  ]
+}

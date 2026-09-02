@@ -1,0 +1,45 @@
+{
+  "version": "2.1.0",
+  "sub_account": "03-dispositions",
+  "countdown_minutes": 90,
+  "workflow_name": "Buyer_EMD_90Min_Countdown_SLA",
+  "trigger_event": "tag_applied:buyer_verbal_accept",
+  "sla_milestones": [
+    {
+      "minute": 0,
+      "action": "Apply tag 'buyer_verbal_accept'; start 90m timer; send wire instructions via SMS & Email; lock deal status."
+    },
+    {
+      "minute": 45,
+      "action": "T+45m Check-in SMS: 'Reminder: 45 minutes remaining to submit wire receipt to Title to secure [Address].'"
+    },
+    {
+      "minute": 75,
+      "action": "T+75m Urgent SMS: 'Final 15-minute notice before deal packet is automatically released to backup buyer pool.'"
+    },
+    {
+      "minute": 90,
+      "action": "EMD TIMEOUT BREACH EXECUTED",
+      "conditions": {
+        "wire_confirmed_by_title": false
+      },
+      "consequences": [
+        "strip_tag:buyer_verbal_accept",
+        "apply_tag:buyer_emd_failed",
+        "apply_penalty_score:-50",
+        "log_dispo_sla_breach",
+        "FIRE_AUTOMATED_REBLAST_TO_TIER_2"
+      ]
+    }
+  ],
+  "clearance_event": {
+    "trigger": "webhook:title_wire_received",
+    "actions": [
+      "stop_90m_timer",
+      "apply_tag:emd_received",
+      "apply_tag:deal_locked_to_buyer",
+      "award_buyer_score_bonus:+10",
+      "push_milestone_to_tc_subaccount"
+    ]
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "version": "1.8.0",
+  "sub_account": "01-acquisitions",
+  "smart_lists": [
+    {
+      "id": "sl_hot_leads_15",
+      "name": "🔥 HOT LEADS (Score ≥ 15)",
+      "priority": "P0_URGENT",
+      "description": "High-intent sellers who replied, completed intake, or received an offer.",
+      "filters": {
+        "lead_score_gte": 15,
+        "tags_exclude": [
+          "DNC",
+          "contract_signed",
+          "archived"
+        ],
+        "status": "open"
+      },
+      "sort": {
+        "field": "lead_score",
+        "direction": "desc"
+      },
+      "action_playbook": "Immediate dial within 5 minutes. Offer presentation or closing call."
+    },
+    {
+      "id": "sl_uncontacted_sla_24h",
+      "name": "⚡ Uncontacted Leads (SLA < 24h)",
+      "priority": "P0_URGENT",
+      "description": "Fresh inbound leads awaiting first outbound telephone contact.",
+      "filters": {
+        "tags_include": [
+          "lead_new"
+        ],
+        "tags_exclude": [
+          "contacted",
+          "sla_breach_reassigned"
+        ],
+        "created_within_hours": 24
+      },
+      "sort": {
+        "field": "created_at",
+        "direction": "asc"
+      },
+      "action_playbook": "Rep must place 3 call attempts + SMS within first 4 hours."
+    },
+    {
+      "id": "sl_sla_at_risk_warning",
+      "name": "⚠️ SLA At Risk (24h - 48h Warning)",
+      "priority": "P1_HIGH",
+      "description": "Leads uncontacted between 24 and 48 hours. Subject to automated revocation.",
+      "filters": {
+        "tags_include": [
+          "lead_new"
+        ],
+        "created_min_hours": 24,
+        "created_max_hours": 48
+      },
+      "sort": {
+        "field": "created_at",
+        "direction": "asc"
+      },
+      "action_playbook": "Manager alerts assigned rep. Call before 48h automated reassignment."
+    },
+    {
+      "id": "sl_sla_breached_revoked",
+      "name": "🚨 SLA Breached / Reassigned (48h+)",
+      "priority": "P1_HIGH",
+      "description": "Leads stripped from inactive reps and re-routed to top performers.",
+      "filters": {
+        "tags_include": [
+          "sla_breach_reassigned"
+        ],
+        "status": "open"
+      },
+      "sort": {
+        "field": "updated_at",
+        "direction": "desc"
+      },
+      "action_playbook": "New assignee executes rapid apology + VIP triage script."
+    },
+    {
+      "id": "sl_appts_today",
+      "name": "📞 Scheduled Calls & Appointments Today",
+      "priority": "P1_HIGH",
+      "description": "All seller discovery and offer presentations booked for today.",
+      "filters": {
+        "appointment_date": "today",
+        "appointment_status": "confirmed"
+      },
+      "sort": {
+        "field": "appointment_time",
+        "direction": "asc"
+      },
+      "action_playbook": "Review property comp packet 15 min prior. Execute structured script."
+    },
+    {
+      "id": "sl_intake_completed_prep_offer",
+      "name": "📝 Intake Completed — Needs Offer Calculation",
+      "priority": "P1_HIGH",
+      "description": "Sellers who finished online intake form; awaiting underwriting.",
+      "filters": {
+        "tags_include": [
+          "intake_complete"
+        ],
+        "pipeline_stage": "stage_acq_offer_prep"
+      },
+      "sort": {
+        "field": "updated_at",
+        "direction": "desc"
+      },
+      "action_playbook": "Run MAO formula (ARV * 0.70 - Repairs - Spread). Extend offer within 4h."
+    },
+    {
+      "id": "sl_offers_sent_awaiting_sig",
+      "name": "📨 Offers Sent — Awaiting Signature",
+      "priority": "P1_HIGH",
+      "description": "Active contracts extended to sellers pending electronic signature.",
+      "filters": {
+        "tags_include": [
+          "offer_sent"
+        ],
+        "tags_exclude": [
+          "contract_signed",
+          "offer_declined"
+        ]
+      },
+      "sort": {
+        "field": "updated_at",
+        "direction": "desc"
+      },
+      "action_playbook": "Daily 10:00 AM check-in. Overcome closing cost and timeline objections."
+    },
+    {
+      "id": "sl_ghosted_72h",
+      "name": "👻 Ghosted Post-Offer (72h Recovery)",
+      "priority": "P2_MEDIUM",
+      "description": "Sellers who went silent 72 hours after receiving purchase offer.",
+      "filters": {
+        "tags_include": [
+          "ghosted_72h"
+        ],
+        "status": "open"
+      },
+      "sort": {
+        "field": "updated_at",
+        "direction": "desc"
+      },
+      "action_playbook": "Deploy psychological takeaway SMS: 'Should I release our cash hold on [Address]?'"
+    },
+    {
+      "id": "sl_drip_0_7d",
+      "name": "🔄 Active 0–7 Day High Frequency Drip",
+      "priority": "P2_MEDIUM",
+      "description": "Sellers receiving automated multi-channel Day 0–7 rapid touch sequence.",
+      "filters": {
+        "tags_include": [
+          "campaign_0_7d_active"
+        ]
+      },
+      "sort": {
+        "field": "created_at",
+        "direction": "desc"
+      },
+      "action_playbook": "Monitor for inbound replies. Immediately engage upon inbound SMS."
+    },
+    {
+      "id": "sl_nurture_30d",
+      "name": "🌱 Active 30-Day Nurture Pipeline",
+      "priority": "P3_LOW",
+      "description": "Medium-motivation sellers receiving educational and market update drips.",
+      "filters": {
+        "lead_score_between": [
+          5,
+          14
+        ],
+        "tags_include": [
+          "campaign_8_45d_active"
+        ]
+      },
+      "sort": {
+        "field": "lead_score",
+        "direction": "desc"
+      },
+      "action_playbook": "Bi-weekly personal check-in call to test for life milestone updates."
+    },
+    {
+      "id": "sl_reactivation_120d",
+      "name": "💣 120+ Day Reactivation Blitz Target",
+      "priority": "P3_LOW",
+      "description": "Historical cold leads queued for quarterly wake-up blitz.",
+      "filters": {
+        "inactivity_days_gte": 120,
+        "tags_exclude": [
+          "DNC",
+          "sold_mls"
+        ]
+      },
+      "sort": {
+        "field": "inactivity_days",
+        "direction": "desc"
+      },
+      "action_playbook": "Deploy 9-word text: 'Are you still open to a clean cash offer on [Address]?'"
+    },
+    {
+      "id": "sl_email_only_leads",
+      "name": "📧 Email-Only Leads (No Phone Available)",
+      "priority": "P3_LOW",
+      "description": "Web intake submissions without phone numbers.",
+      "filters": {
+        "has_phone": false,
+        "has_email": true
+      },
+      "sort": {
+        "field": "created_at",
+        "direction": "desc"
+      },
+      "action_playbook": "Automated email sequence driving to instant valuation booking page."
+    }
+  ]
+}

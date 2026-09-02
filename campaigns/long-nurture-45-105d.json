@@ -1,0 +1,247 @@
+{
+  "category": "Long-Term Nurture (Days 45–105+)",
+  "description": "Quarterly value touches, interest rate shift analysis, and seasonal check-ins.",
+  "total_steps": 26,
+  "campaigns": [
+    {
+      "id": "ln_001",
+      "step": 1,
+      "day": 48,
+      "channel": "EMAIL",
+      "name": "Interest Rates and Property Values",
+      "subject": "How recent rate shifts impact your property value in {{property.city}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_002",
+      "step": 2,
+      "day": 52,
+      "channel": "SMS",
+      "name": "9-Word Soft Text",
+      "copy": "Hi {{contact.first_name}}, are you still considering selling {{property.address}}?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_003",
+      "step": 3,
+      "day": 56,
+      "channel": "EMAIL",
+      "name": "Quarterly Real Estate Market Report",
+      "subject": "Q2 Market report for {{property.city}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_004",
+      "step": 4,
+      "day": 60,
+      "channel": "SMS",
+      "name": "Day 60 Motivation Check",
+      "copy": "{{contact.first_name}}, our capital group is expanding in {{property.city}} this quarter. Let me know if you want an updated cash offer on {{property.address}}.",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_005",
+      "step": 5,
+      "day": 60,
+      "channel": "AUTOMATION",
+      "name": "Apply 60d Decay",
+      "actions": [
+        "apply_decay:-6"
+      ],
+      "stop_on_reply": false
+    },
+    {
+      "id": "ln_006",
+      "step": 6,
+      "day": 64,
+      "channel": "EMAIL",
+      "name": "Creative Financing & Subject-To Options",
+      "subject": "Maximizing your net payout with flexible sale terms",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_007",
+      "step": 7,
+      "day": 68,
+      "channel": "SMS",
+      "name": "Friendly Hello",
+      "copy": "Morning {{contact.first_name}}, just saying hello and checking if anything has changed regarding the house?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_008",
+      "step": 8,
+      "day": 72,
+      "channel": "EMAIL",
+      "name": "Seller Story: Avoiding Foreclosure",
+      "subject": "Case Study: How a local homeowner saved their equity",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_009",
+      "step": 9,
+      "day": 76,
+      "channel": "SMS",
+      "name": "Quick Comps Touch",
+      "copy": "Hey {{contact.first_name}}, a property near {{property.address}} recently sold. Thought of you — let me know if you want the details.",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_010",
+      "step": 10,
+      "day": 80,
+      "channel": "EMAIL",
+      "name": "Tax Assessment Appeal & Valuation",
+      "subject": "Did your property tax assessment go up this year?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_011",
+      "step": 11,
+      "day": 84,
+      "channel": "SMS",
+      "name": "Simple Check-in",
+      "copy": "Hi {{contact.first_name}}, hope life is treating you well! Are you still the owner of {{property.address}}?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_012",
+      "step": 12,
+      "day": 88,
+      "channel": "EMAIL",
+      "name": "Estate Planning & Property Transfer",
+      "subject": "Structuring property transfers smoothly for your family",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_013",
+      "step": 13,
+      "day": 90,
+      "channel": "SMS",
+      "name": "Quarterly Check",
+      "copy": "{{contact.first_name}}, we're setting our acquisition targets for the upcoming quarter. Is {{property.address}} still on the table?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_014",
+      "step": 14,
+      "day": 90,
+      "channel": "AUTOMATION",
+      "name": "Apply 90d Decay",
+      "actions": [
+        "apply_decay:-15"
+      ],
+      "stop_on_reply": false
+    },
+    {
+      "id": "ln_015",
+      "step": 15,
+      "day": 92,
+      "channel": "TASK",
+      "name": "Quarterly Rep Dial",
+      "instructions": "Direct call attempt. Verify if number is still active.",
+      "stop_on_reply": false
+    },
+    {
+      "id": "ln_016",
+      "step": 16,
+      "day": 94,
+      "channel": "EMAIL",
+      "name": "Home Maintenance Cost Realities",
+      "subject": "The hidden carrying costs of vacant or aging homes",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_017",
+      "step": 17,
+      "day": 97,
+      "channel": "SMS",
+      "name": "Short Question",
+      "copy": "Hey {{contact.first_name}}, would you be open to an offer if we paid all closing costs and handled all cleanup?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_018",
+      "step": 18,
+      "day": 99,
+      "channel": "EMAIL",
+      "name": "Seasonal Buyer Demand Surge",
+      "subject": "Seasonal real estate trends in {{property.city}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_019",
+      "step": 19,
+      "day": 101,
+      "channel": "SMS",
+      "name": "Timeline Re-Engagement",
+      "copy": "Hi {{contact.first_name}}, any plans to make a move before the end of the year?",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_020",
+      "step": 20,
+      "day": 103,
+      "channel": "EMAIL",
+      "name": "How to Sell Without Showings",
+      "subject": "Zero open houses, zero strangers in your home",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_021",
+      "step": 21,
+      "day": 105,
+      "channel": "SMS",
+      "name": "Transition to 120d Blitz Queue",
+      "copy": "{{contact.first_name}}, I'll pause our regular notes for now. If you ever want a guaranteed cash offer, feel free to text this number anytime!",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_022",
+      "step": 22,
+      "day": 105,
+      "channel": "EMAIL",
+      "name": "Final Quarterly Recap",
+      "subject": "Keeping your cash offer on file for {{property.address}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_023",
+      "step": 23,
+      "day": 105,
+      "channel": "AUTOMATION",
+      "name": "Queue for Reactivation Blitz",
+      "actions": [
+        "apply_tag:ready_for_blitz_120d"
+      ],
+      "stop_on_reply": false
+    },
+    {
+      "id": "ln_024",
+      "step": 24,
+      "day": 105,
+      "channel": "TASK",
+      "name": "Archive Audit",
+      "instructions": "Ensure property status is verified before quarterly blitz.",
+      "stop_on_reply": false
+    },
+    {
+      "id": "ln_025",
+      "step": 25,
+      "day": 105,
+      "channel": "EMAIL",
+      "name": "Direct Contact Card",
+      "subject": "Direct contact details for {{user.name}}",
+      "stop_on_reply": true
+    },
+    {
+      "id": "ln_026",
+      "step": 26,
+      "day": 105,
+      "channel": "SMS",
+      "name": "Parting Warm Wish",
+      "copy": "Wishing you all the best, {{contact.first_name}}!",
+      "stop_on_reply": true
+    }
+  ]
+}

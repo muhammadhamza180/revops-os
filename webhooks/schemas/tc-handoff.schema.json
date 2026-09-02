@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GHLTCHandoffPayload",
+  "type": "object",
+  "required": [
+    "deal_id",
+    "deal_type",
+    "purchase_price",
+    "contract_date",
+    "closing_date",
+    "document_links",
+    "seller_contact"
+  ],
+  "properties": {
+    "deal_id": {
+      "type": "string"
+    },
+    "source_sub_account": {
+      "type": "string",
+      "default": "01-acquisitions"
+    },
+    "target_sub_account": {
+      "type": "string",
+      "default": "02-transaction-coordination"
+    },
+    "deal_type": {
+      "type": "string",
+      "enum": [
+        "wholesale_assignment",
+        "novation",
+        "creative_finance",
+        "retail_mls",
+        "joint_venture"
+      ]
+    },
+    "seller_contact": {
+      "type": "object",
+      "required": [
+        "first_name",
+        "phone",
+        "email"
+      ],
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        }
+      }
+    },
+    "property_address": {
+      "type": "string"
+    },
+    "assigned_acq_rep": {
+      "type": "string"
+    },
+    "purchase_price": {
+      "type": "number",
+      "minimum": 1000
+    },
+    "earnest_money_deposit": {
+      "type": "number",
+      "minimum": 0
+    },
+    "contract_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "closing_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "title_company": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "officer_email": {
+          "type": "string",
+          "format": "email"
+        },
+        "escrow_number": {
+          "type": "string"
+        }
+      }
+    },
+    "document_links": {
+      "type": "object",
+      "required": [
+        "executed_purchase_agreement"
+      ],
+      "properties": {
+        "executed_purchase_agreement": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title_commitment": {
+          "type": "string",
+          "format": "uri"
+        },
+        "property_photos_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "inspection_report_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}
