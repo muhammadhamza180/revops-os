@@ -1,4 +1,4 @@
-# Enterprise GoHighLevel RevOps Mesh
+# 🏢 RevOps OS (`revops-os`)
 
 [![CI Suite](https://github.com/muhammadhamza180/enterprise-ghl-revops-mesh/actions/workflows/ci.yml/badge.svg)](https://github.com/muhammadhamza180/enterprise-ghl-revops-mesh/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
